@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, Github, ExternalLink } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { ThemeToggle } from '../ui/ThemeToggle';
+import { Logo } from '../ui/Logo';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,9 +32,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg">🐹</span>
-            </div>
+            <Logo size="md" className="rounded-lg" />
             <span className="text-xl font-bold text-text">rootcause</span>
           </Link>
 
@@ -71,7 +70,7 @@ export const Navbar: React.FC = () => {
             <Button 
               variant="ghost" 
               icon={Github}
-              href="https://github.com/rootcause/cli"
+              href="https://github.com/rootCauseScan/"
               external
             >
               GitHub
@@ -128,7 +127,7 @@ export const Navbar: React.FC = () => {
                 <Button 
                   variant="ghost" 
                   icon={Github}
-                  href="https://github.com/rootcause/cli"
+                  href="https://github.com/rootCauseScan/"
                   external
                   size="sm"
                 >

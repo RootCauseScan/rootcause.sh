@@ -46,7 +46,7 @@ export const CTA: React.FC = () => {
               variant="secondary" 
               size="lg" 
               icon={Github}
-              href="https://github.com/rootcause/cli"
+              href="https://github.com/rootCauseScan/"
               external
             >
               Star on GitHub

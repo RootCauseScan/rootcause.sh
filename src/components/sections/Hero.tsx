@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '../ui/Button';
+import { Logo } from '../ui/Logo';
 import { Github, ArrowRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -33,6 +34,19 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="mb-6"
+          >
+            <Logo 
+              size="lg" 
+              className="mx-auto rounded-2xl shadow-lg" 
+            />
+          </motion.div>
+
           {/* Hero badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -87,7 +101,7 @@ export const Hero: React.FC = () => {
               variant="secondary" 
               size="lg" 
               icon={Github}
-              href="https://github.com/rootcause/cli"
+              href="https://github.com/rootCauseScan/"
               external
             >
               View on GitHub

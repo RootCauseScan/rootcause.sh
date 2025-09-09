@@ -168,7 +168,7 @@ export const ContactPage: React.FC = () => {
                 </h3>
                 <div className="space-y-4">
                   <a
-                    href="https://github.com/rootcause/cli/discussions"
+                    href="https://github.com/rootCauseScan/discussions"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center p-4 bg-bg hover:bg-border rounded-lg transition-colors group"
@@ -185,7 +185,7 @@ export const ContactPage: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://github.com/rootcause/cli/issues"
+                    href="https://github.com/rootCauseScan/issues"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center p-4 bg-bg hover:bg-border rounded-lg transition-colors group"
@@ -208,10 +208,10 @@ export const ContactPage: React.FC = () => {
                         Email directo
                       </h4>
                       <a 
-                        href="mailto:hello@rootcause.sh"
+                        href="mailto:contact@rootcause.sh"
                         className="text-text-secondary text-sm hover:text-primary"
                       >
-                        hello@rootcause.sh
+                        contact@rootcause.sh
                       </a>
                     </div>
                   </div>

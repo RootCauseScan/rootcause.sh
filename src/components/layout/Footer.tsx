@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github, ExternalLink } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
+import { Logo } from '../ui/Logo';
 
 export const Footer: React.FC = () => {
   const links = [
-    { name: 'GitHub', href: 'https://github.com/rootcause/cli', external: true },
+    { name: 'GitHub', href: 'https://github.com/rootCauseScan/', external: true },
     { name: 'Docs', href: 'https://docs.rootcause.sh', external: true },
     { name: 'Blog', href: '#', external: false },
     { name: 'Privacy', href: '#', external: false }
@@ -18,9 +19,7 @@ export const Footer: React.FC = () => {
           {/* Logo and description */}
           <div className="flex flex-col space-y-3">
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                <span className="text-black text-sm">🐹</span>
-              </div>
+              <Logo size="sm" className="rounded" />
               <span className="text-lg font-bold text-text">rootcause</span>
             </div>
             <p className="text-text-secondary text-sm max-w-md">
