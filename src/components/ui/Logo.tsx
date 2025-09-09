@@ -17,7 +17,7 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
 
   const getLogoSrc = () => {
     if (theme === 'dark') {
-      return size === 'lg' ? '/dark-icon-512x512.png' : '/dark-icon-192x192.png';
+      return size === 'lg' ? '/icon-512x512.png' : '/icon-192x192.png';
     }
     // Para modo claro, usar los iconos originales
     return size === 'lg' ? '/light-icon-512x512.png' : '/light-icon-192x192.png';
