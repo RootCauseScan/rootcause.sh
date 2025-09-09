@@ -10,8 +10,9 @@
     /* Light theme colors */
     --color-bg: #FFFFFF;
     --color-surface: #F6F7F9;
-    --color-primary: #D7A800;
-    --color-accent: #F2C200;
+    --color-primary: #FFD700;
+    --color-accent: #FFE55C;
+    --color-secondary: #E6C200;
     --color-text: #151517;
     --color-text-secondary: #53535A;
     --color-border: #E5E7EB;
@@ -21,8 +22,9 @@
     /* Dark theme colors */
     --color-bg: #0B0B0C;
     --color-surface: #121214;
-    --color-primary: #F8D247;
-    --color-accent: #FFE16A;
+    --color-primary: #FFE55C;
+    --color-accent: #FFF176;
+    --color-secondary: #FFD54F;
     --color-text: #F2F2F3;
     --color-text-secondary: #B4B4B6;
     --color-border: #1E1E20;
@@ -77,6 +79,10 @@
     background-color: var(--color-accent);
   }
 
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
   .text-text {
     color: var(--color-text);
   }
@@ -93,12 +99,20 @@
     color: var(--color-accent);
   }
 
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
   .border-border {
     border-color: var(--color-border);
   }
 
   .border-primary {
     border-color: var(--color-primary);
+  }
+
+  .border-secondary {
+    border-color: var(--color-secondary);
   }
 
   /* Hover effects for primary color */
@@ -116,6 +130,10 @@
 
   .hover\:text-primary:hover {
     color: var(--color-primary);
+  }
+
+  .hover\:text-secondary:hover {
+    color: var(--color-secondary);
   }
 
   /* Focus ring colors */

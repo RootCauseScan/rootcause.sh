@@ -14,6 +14,7 @@ export default {
         'surface': 'var(--color-surface)',
         'primary': 'var(--color-primary)',
         'accent': 'var(--color-accent)',
+        'secondary': 'var(--color-secondary)',
         'text': 'var(--color-text)',
         'text-secondary': 'var(--color-text-secondary)',
         'border': 'var(--color-border)',

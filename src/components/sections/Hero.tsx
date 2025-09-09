@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
           >
             <Logo 
               size="lg" 
-              className="mx-auto rounded-2xl shadow-lg" 
+              className="mx-auto" 
             />
           </motion.div>
 
