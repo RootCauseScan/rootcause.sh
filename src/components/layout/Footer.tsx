@@ -6,7 +6,7 @@ import { Logo } from '../ui/Logo';
 
 export const Footer: React.FC = () => {
   const links = [
-    { name: 'GitHub', href: 'https://github.com/rootCauseScan/', external: true },
+    { name: 'GitHub', href: 'https://github.com/RootCauseScan/scanner', external: true },
     { name: 'Docs', href: 'https://docs.rootcause.sh', external: true },
     { name: 'Blog', href: '#', external: false },
     { name: 'Privacy', href: '#', external: false }

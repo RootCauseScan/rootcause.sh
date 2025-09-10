@@ -168,7 +168,7 @@ export const ContactPage: React.FC = () => {
                 </h3>
                 <div className="space-y-4">
                   <a
-                    href="https://github.com/rootCauseScan/discussions"
+                    href="https://github.com/RootCauseScan/scanner/discussions"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center p-4 bg-bg hover:bg-border rounded-lg transition-colors group"
@@ -185,7 +185,7 @@ export const ContactPage: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://github.com/rootCauseScan/issues"
+                    href="https://github.com/RootCauseScan/scanner/issues"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center p-4 bg-bg hover:bg-border rounded-lg transition-colors group"

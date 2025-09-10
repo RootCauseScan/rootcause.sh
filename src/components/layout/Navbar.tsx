@@ -70,7 +70,7 @@ export const Navbar: React.FC = () => {
             <Button 
               variant="ghost" 
               icon={Github}
-              href="https://github.com/rootCauseScan/"
+              href="https://github.com/RootCauseScan/scanner"
               external
             >
               GitHub
@@ -127,7 +127,7 @@ export const Navbar: React.FC = () => {
                 <Button 
                   variant="ghost" 
                   icon={Github}
-                  href="https://github.com/rootCauseScan/"
+                  href="https://github.com/RootCauseScan/scanner"
                   external
                   size="sm"
                 >

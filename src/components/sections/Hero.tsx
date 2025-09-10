@@ -101,7 +101,7 @@ export const Hero: React.FC = () => {
               variant="secondary" 
               size="lg" 
               icon={Github}
-              href="https://github.com/rootCauseScan/"
+              href="https://github.com/RootCauseScan/scanner"
               external
             >
               View on GitHub

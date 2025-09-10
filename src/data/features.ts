@@ -97,7 +97,7 @@ export const installMethods: InstallMethod[] = [
   },
   {
     name: 'Binary',
-    command: 'wget https://github.com/rootCauseScan/releases/latest/download/rootcause-linux-x64',
+    command: 'wget https://github.com/RootCauseScan/scanner/releases/latest/download/rootcause-linux-x64',
     description: 'Direct download'
   }
 ];
