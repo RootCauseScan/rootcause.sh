@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
+import { TypewriterText } from '../ui/TypewriterText';
 import { Github, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -68,7 +69,9 @@ export const Hero: React.FC = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-text mb-6"
           >
             {t('hero.title')}
-            <span className="block text-primary">{t('hero.titleAccent')}</span>
+            <span className="block">
+              <TypewriterText />
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -115,9 +118,9 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="mt-12 p-4 bg-black/20 rounded-lg border border-border max-w-md mx-auto"
+            className="mt-12 p-4 bg-code rounded-lg border border-code max-w-md mx-auto"
           >
-            <p className="text-text-secondary text-sm mb-2">{t('hero.quickInstall')}</p>
+            <p className="text-code text-sm mb-2">{t('hero.quickInstall')}</p>
             <code className="text-primary font-mono text-sm">
               curl -sSL https://get.rootcause.sh | sh
             </code>

@@ -78,7 +78,7 @@ Found 12 issues:
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {['Semgrep', 'YAML', 'JSON', 'Regex'].map((format) => (
-                    <div key={format} className="p-3 bg-bg rounded-lg text-center">
+                    <div key={format} className="p-3 bg-surface rounded-lg text-center">
                       <span className="text-text font-mono text-sm">{format}</span>
                     </div>
                   ))}

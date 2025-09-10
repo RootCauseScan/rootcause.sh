@@ -69,7 +69,7 @@ export const Installation: React.FC = () => {
           </motion.div>
 
           {/* Quick start */}
-          <div className="mt-8 p-4 bg-bg rounded-lg">
+          <div className="mt-8 p-4 bg-surface rounded-lg">
             <h4 className="font-medium text-text mb-2">{t('installation.quickStart')}</h4>
             <CodeBlock 
               code={`# Scan current directory

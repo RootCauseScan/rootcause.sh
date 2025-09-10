@@ -14,6 +14,7 @@ export const Navbar: React.FC = () => {
   const { t } = useLanguage();
 
   const navItems = [
+    { name: t('nav.home'), path: '/' },
     { name: t('nav.rules'), path: '/rules' },
     { name: t('nav.docs'), path: 'https://docs.rootcause.sh', external: true },
     { name: t('nav.contact'), path: '/contact' }
@@ -39,8 +40,8 @@ export const Navbar: React.FC = () => {
             <span className="text-xl font-bold text-text">rootcause</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               item.external ? (
                 <a

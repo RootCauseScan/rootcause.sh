@@ -19,7 +19,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return 'en';
   });
 
-  const t = (key: string): string => {
+  const t = (key: string): any => {
     const keys = key.split('.');
     let value: any = translations[language];
     
@@ -32,7 +32,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       }
     }
     
-    return typeof value === 'string' ? value : key;
+    return value;
   };
 
   useEffect(() => {

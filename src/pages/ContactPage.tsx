@@ -69,7 +69,7 @@ export const ContactPage: React.FC = () => {
       {/* Contact form and options */}
       <motion.section
         ref={ref}
-        initial="hidden"
+        initial={{ opacity: 0, y: 30 }}
         animate={controls}
         variants={scrollRevealVariants}
         className="py-20"

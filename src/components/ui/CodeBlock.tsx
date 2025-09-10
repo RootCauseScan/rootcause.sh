@@ -25,8 +25,8 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
 
   return (
     <div className={`relative ${className}`}>
-      <pre className="bg-black/50 border border-border rounded-lg p-4 overflow-x-auto">
-        <code className="font-mono text-sm text-text">
+      <pre className="bg-code border border-code rounded-lg p-4 overflow-x-auto">
+        <code className="font-mono text-sm text-code">
           {code}
         </code>
       </pre>

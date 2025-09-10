@@ -38,5 +38,5 @@ export interface Language {
 export interface LanguageContextType {
   language: 'es' | 'en';
   setLanguage: (lang: 'es' | 'en') => void;
-  t: (key: string) => string;
+  t: (key: string) => any;
 }

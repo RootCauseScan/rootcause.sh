@@ -12,6 +12,7 @@ interface ButtonProps {
   href?: string;
   external?: boolean;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -23,7 +24,8 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   href,
   external,
-  className = ''
+  className = '',
+  type = 'button'
 }) => {
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
   
@@ -67,6 +69,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
+      type={type}
       onClick={onClick}
       className={classes}
       whileHover={{ scale: 1.02 }}
