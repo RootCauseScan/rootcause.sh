@@ -54,3 +54,4 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({ className = '' }
     </span>
   );
 };
+
