@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollReveal, scrollRevealVariants } from '../../hooks/useScrollReveal';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const TrustStrip: React.FC = () => {
   const ref = useRef(null);
   const controls = useScrollReveal(ref);
+  const { t } = useLanguage();
 
   const companies = [
     'Company A', 'Company B', 'Company C', 'Company D', 'Company E'
@@ -21,7 +23,7 @@ export const TrustStrip: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-text-secondary text-lg">
-            Trusted by security teams worldwide
+            {t('trust.title')}
           </p>
         </div>
         

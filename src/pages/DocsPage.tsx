@@ -4,8 +4,11 @@ import { ExternalLink, Book, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const DocsPage: React.FC = () => {
+  const { t } = useLanguage();
+
   React.useEffect(() => {
     // Redirect to docs after a short delay to show this page
     const timer = setTimeout(() => {
@@ -16,10 +19,10 @@ export const DocsPage: React.FC = () => {
   }, []);
 
   const quickLinks = [
-    { title: 'Getting Started', href: 'https://docs.rootcause.sh/getting-started' },
-    { title: 'Rule Writing Guide', href: 'https://docs.rootcause.sh/rules' },
-    { title: 'CI/CD Integration', href: 'https://docs.rootcause.sh/cicd' },
-    { title: 'API Reference', href: 'https://docs.rootcause.sh/api' }
+    { title: t('docs.links.gettingStarted'), href: 'https://docs.rootcause.sh/getting-started' },
+    { title: t('docs.links.ruleWriting'), href: 'https://docs.rootcause.sh/rules' },
+    { title: t('docs.links.cicd'), href: 'https://docs.rootcause.sh/cicd' },
+    { title: t('docs.links.api'), href: 'https://docs.rootcause.sh/api' }
   ];
 
   return (
@@ -36,17 +39,16 @@ export const DocsPage: React.FC = () => {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-text mb-6">
-            Documentation
+            {t('docs.title')}
           </h1>
           
           <p className="text-xl text-text-secondary mb-8">
-            La documentación completa vive en docs.rootcause.sh. 
-            Te redirigiremos automáticamente en unos segundos.
+            {t('docs.subtitle')}
           </p>
 
           <Card className="mb-8">
             <div className="space-y-4">
-              <h3 className="text-lg font-bold text-text">Enlaces rápidos:</h3>
+              <h3 className="text-lg font-bold text-text">{t('docs.quickLinks')}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {quickLinks.map((link) => (
                   <a
@@ -74,19 +76,19 @@ export const DocsPage: React.FC = () => {
               iconPosition="right"
               size="lg"
             >
-              Abrir documentación
+              {t('docs.openDocs')}
             </Button>
             
             <Button variant="ghost" size="lg">
               <Link to="/" className="flex items-center gap-2">
                 <ArrowLeft size={18} />
-                Volver al inicio
+                {t('docs.backHome')}
               </Link>
             </Button>
           </div>
 
           <div className="mt-8 text-text-secondary text-sm">
-            <p>Si no te rediriges automáticamente, haz clic en el botón de arriba.</p>
+            <p>{t('docs.redirectNote')}</p>
           </div>
         </motion.div>
       </div>

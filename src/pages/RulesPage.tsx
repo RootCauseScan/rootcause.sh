@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { useScrollReveal, scrollRevealVariants } from '../hooks/useScrollReveal';
-import { ruleFormats } from '../data/features';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/ui/Card';
 import { CodeBlock } from '../components/ui/CodeBlock';
 import { Button } from '../components/ui/Button';
@@ -12,6 +12,47 @@ import { Badge } from '../components/ui/Badge';
 export const RulesPage: React.FC = () => {
   const ref = useRef(null);
   const controls = useScrollReveal(ref);
+  const { t } = useLanguage();
+
+  const ruleFormats = [
+    {
+      name: 'Semgrep',
+      description: t('rules.formatsSubtitle'),
+      code: `rules:
+  - id: sql-injection
+    pattern: |
+      $QUERY = "SELECT * FROM users WHERE id = " + $INPUT
+    message: Potential SQL injection
+    severity: ERROR
+    languages: [java, python]`,
+      example: 'String query = "SELECT * FROM users WHERE id = " + userId;'
+    },
+    {
+      name: 'JSON',
+      description: 'Formato estructurado para reglas complejas',
+      code: `{
+  "id": "hardcoded-secret",
+  "pattern": {
+    "regex": "password\\\\s*=\\\\s*['\"]\\\\w+['\"]"
+  },
+  "message": "Hardcoded password detected",
+  "severity": "HIGH"
+}`,
+      example: 'password = "admin123"'
+    },
+    {
+      name: 'YAML',
+      description: 'Sintaxis limpia para reglas personalizadas',
+      code: `id: buffer-overflow
+pattern:
+  ast: |
+    strcpy($dst, $src)
+message: Use strncpy instead of strcpy
+severity: CRITICAL
+languages: [c, cpp]`,
+      example: 'strcpy(buffer, userInput);'
+    }
+  ];
 
   return (
     <div className="min-h-screen pt-16">
@@ -25,13 +66,13 @@ export const RulesPage: React.FC = () => {
             className="text-center"
           >
             <Badge variant="primary" className="mb-6">
-              Rule-agnostic
+              {t('rules.badge')}
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold text-text mb-6">
-              Bring your rules
+              {t('rules.title')}
             </h1>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
-              Trae tus reglas existentes o usa las nuestras. Compatible con Semgrep, YAML, JSON y formatos personalizados. Sin lock-in.
+              {t('rules.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button 
@@ -40,11 +81,11 @@ export const RulesPage: React.FC = () => {
                 icon={ExternalLink}
                 iconPosition="right"
               >
-                Ver documentación completa
+                {t('rules.viewDocs')}
               </Button>
               <Button variant="ghost">
                 <Link to="/" className="flex items-center gap-2">
-                  Volver al inicio <ArrowRight size={16} />
+                  {t('rules.backHome')} <ArrowRight size={16} />
                 </Link>
               </Button>
             </div>
@@ -63,10 +104,10 @@ export const RulesPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-text mb-6">
-              Formatos soportados
+              {t('rules.formatsTitle')}
             </h2>
             <p className="text-xl text-text-secondary">
-              Reutiliza reglas existentes o crea nuevas con sintaxis familiar
+              {t('rules.formatsSubtitle')}
             </p>
           </div>
 
@@ -90,7 +131,7 @@ export const RulesPage: React.FC = () => {
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-sm font-medium text-text mb-2">Regla:</h4>
+                      <h4 className="text-sm font-medium text-text mb-2">{t('rules.ruleLabel')}</h4>
                       <CodeBlock 
                         code={format.code} 
                         language={format.name === 'JSON' ? 'json' : 'yaml'}
@@ -99,7 +140,7 @@ export const RulesPage: React.FC = () => {
 
                     {format.example && (
                       <div>
-                        <h4 className="text-sm font-medium text-text mb-2">Código vulnerable detectado:</h4>
+                        <h4 className="text-sm font-medium text-text mb-2">{t('rules.vulnerableCode')}</h4>
                         <CodeBlock 
                           code={format.example}
                           language="javascript"
@@ -118,21 +159,20 @@ export const RulesPage: React.FC = () => {
             <Card className="bg-primary/5 border-primary/20">
               <div className="text-center">
                 <h3 className="text-xl font-bold text-text mb-4">
-                  Rendimiento optimizado
+                  {t('rules.performance.title')}
                 </h3>
                 <p className="text-text-secondary mb-4">
-                  Todos los formatos se procesan con la misma velocidad. El engine interno 
-                  optimiza automáticamente las reglas para máximo rendimiento.
+                  {t('rules.performance.description')}
                 </p>
                 <div className="flex flex-wrap justify-center gap-4 text-sm">
                   <span className="px-3 py-1 bg-primary/10 rounded-full text-primary">
-                    Compilación de reglas
+                    {t('rules.performance.compilation')}
                   </span>
                   <span className="px-3 py-1 bg-primary/10 rounded-full text-primary">
-                    Cache inteligente
+                    {t('rules.performance.cache')}
                   </span>
                   <span className="px-3 py-1 bg-primary/10 rounded-full text-primary">
-                    Análisis paralelo
+                    {t('rules.performance.parallel')}
                   </span>
                 </div>
               </div>
@@ -142,11 +182,10 @@ export const RulesPage: React.FC = () => {
           {/* Examples section */}
           <div className="mt-20 text-center">
             <h3 className="text-2xl font-bold text-text mb-6">
-              ¿Necesitas más ejemplos?
+              {t('rules.examples.title')}
             </h3>
             <p className="text-text-secondary mb-8">
-              La documentación incluye reglas pre-construidas para casos comunes 
-              y guías para crear reglas personalizadas.
+              {t('rules.examples.description')}
             </p>
             <Button 
               href="https://docs.rootcause.sh/rules/examples"
@@ -154,7 +193,7 @@ export const RulesPage: React.FC = () => {
               icon={ExternalLink}
               iconPosition="right"
             >
-              Ver ejemplos en Docs
+              {t('rules.examples.viewExamples')}
             </Button>
           </div>
         </div>

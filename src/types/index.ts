@@ -28,3 +28,15 @@ export interface InstallMethod {
   command: string;
   description?: string;
 }
+
+export interface Language {
+  code: 'es' | 'en';
+  name: string;
+  flag: string;
+}
+
+export interface LanguageContextType {
+  language: 'es' | 'en';
+  setLanguage: (lang: 'es' | 'en') => void;
+  t: (key: string) => string;
+}

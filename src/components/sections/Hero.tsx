@@ -3,9 +3,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
 import { Github, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const Hero: React.FC = () => {
   const ref = useRef(null);
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"]
@@ -55,7 +57,7 @@ export const Hero: React.FC = () => {
             className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8"
           >
             <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
-            Open Source SAST • Apache 2.0
+            {t('hero.badge')}
           </motion.div>
 
           {/* Main heading */}
@@ -65,8 +67,8 @@ export const Hero: React.FC = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-text mb-6"
           >
-            Find the root.
-            <span className="block text-primary">Fast.</span>
+            {t('hero.title')}
+            <span className="block text-primary">{t('hero.titleAccent')}</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -76,9 +78,9 @@ export const Hero: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto"
           >
-            SAST open source en Rust. Rápido, extensible, multi-lenguaje.
+            {t('hero.subtitle')}
             <br />
-            <span className="text-lg">Análisis en segundos, no minutos.</span>
+            <span className="text-lg">{t('hero.description')}</span>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -95,7 +97,7 @@ export const Hero: React.FC = () => {
               href="https://docs.rootcause.sh"
               external
             >
-              Get Started
+              {t('hero.getStarted')}
             </Button>
             <Button 
               variant="secondary" 
@@ -104,7 +106,7 @@ export const Hero: React.FC = () => {
               href="https://github.com/RootCauseScan/scanner"
               external
             >
-              View on GitHub
+              {t('hero.viewGithub')}
             </Button>
           </motion.div>
 
@@ -115,7 +117,7 @@ export const Hero: React.FC = () => {
             transition={{ delay: 1, duration: 0.6 }}
             className="mt-12 p-4 bg-black/20 rounded-lg border border-border max-w-md mx-auto"
           >
-            <p className="text-text-secondary text-sm mb-2">Quick install:</p>
+            <p className="text-text-secondary text-sm mb-2">{t('hero.quickInstall')}</p>
             <code className="text-primary font-mono text-sm">
               curl -sSL https://get.rootcause.sh | sh
             </code>

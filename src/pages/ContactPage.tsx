@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { Send, Mail, Github, MessageSquare, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal, scrollRevealVariants } from '../hooks/useScrollReveal';
+import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 
 export const ContactPage: React.FC = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,16 +51,15 @@ export const ContactPage: React.FC = () => {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-text mb-6">
-              Get in touch
+              {t('contact.title')}
             </h1>
             <p className="text-xl text-text-secondary max-w-2xl mx-auto mb-8">
-              Soporte empresarial, preguntas técnicas, contribuciones. 
-              Estamos aquí para ayudar.
+              {t('contact.subtitle')}
             </p>
             <Button variant="ghost">
               <Link to="/" className="flex items-center gap-2">
                 <ArrowLeft size={16} />
-                Volver al inicio
+                {t('contact.backHome')}
               </Link>
             </Button>
           </motion.div>
@@ -78,7 +79,7 @@ export const ContactPage: React.FC = () => {
             {/* Contact form */}
             <Card>
               <h2 className="text-2xl font-bold text-text mb-6">
-                Send us a message
+                {t('contact.sendMessage')}
               </h2>
               
               {submitted ? (
@@ -87,11 +88,10 @@ export const ContactPage: React.FC = () => {
                     <Mail size={24} className="text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-text mb-2">
-                    ¡Mensaje enviado!
+                    {t('contact.messageSent')}
                   </h3>
                   <p className="text-text-secondary">
-                    Tu cliente de email se abrió con el mensaje preparado. 
-                    Si no se abrió automáticamente, puedes escribir directamente a{' '}
+                    {t('contact.messageSentDesc')}{' '}
                     <a href="mailto:hello@rootcause.sh" className="text-primary hover:underline">
                       hello@rootcause.sh
                     </a>
@@ -101,7 +101,7 @@ export const ContactPage: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-text mb-2">
-                      Nombre *
+                      {t('contact.form.name')} *
                     </label>
                     <input
                       type="text"
@@ -111,13 +111,13 @@ export const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-bg border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary text-text"
-                      placeholder="Tu nombre"
+                      placeholder={t('contact.form.namePlaceholder')}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-text mb-2">
-                      Email *
+                      {t('contact.form.email')} *
                     </label>
                     <input
                       type="email"
@@ -127,13 +127,13 @@ export const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-bg border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary text-text"
-                      placeholder="tu@ejemplo.com"
+                      placeholder={t('contact.form.emailPlaceholder')}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-text mb-2">
-                      Mensaje *
+                      {t('contact.form.message')} *
                     </label>
                     <textarea
                       id="message"
@@ -143,7 +143,7 @@ export const ContactPage: React.FC = () => {
                       required
                       rows={5}
                       className="w-full px-4 py-3 bg-bg border border-border rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary text-text"
-                      placeholder="Cuéntanos cómo podemos ayudarte..."
+                      placeholder={t('contact.form.messagePlaceholder')}
                     />
                   </div>
 
@@ -154,7 +154,7 @@ export const ContactPage: React.FC = () => {
                     iconPosition="right"
                     className="w-full"
                   >
-                    Enviar mensaje
+                    {t('contact.form.send')}
                   </Button>
                 </form>
               )}
@@ -164,7 +164,7 @@ export const ContactPage: React.FC = () => {
             <div className="space-y-8">
               <Card>
                 <h3 className="text-xl font-bold text-text mb-4">
-                  Otras formas de contacto
+                  {t('contact.otherWays')}
                 </h3>
                 <div className="space-y-4">
                   <a
@@ -176,10 +176,10 @@ export const ContactPage: React.FC = () => {
                     <MessageSquare size={24} className="text-primary mr-4" />
                     <div>
                       <h4 className="font-medium text-text group-hover:text-primary">
-                        GitHub Discussions
+                        {t('contact.discussions.title')}
                       </h4>
                       <p className="text-text-secondary text-sm">
-                        Preguntas de la comunidad y soporte
+                        {t('contact.discussions.description')}
                       </p>
                     </div>
                   </a>
@@ -193,10 +193,10 @@ export const ContactPage: React.FC = () => {
                     <Github size={24} className="text-primary mr-4" />
                     <div>
                       <h4 className="font-medium text-text group-hover:text-primary">
-                        GitHub Issues
+                        {t('contact.issues.title')}
                       </h4>
                       <p className="text-text-secondary text-sm">
-                        Reportar bugs y solicitar features
+                        {t('contact.issues.description')}
                       </p>
                     </div>
                   </a>
@@ -205,7 +205,7 @@ export const ContactPage: React.FC = () => {
                     <Mail size={24} className="text-primary mr-4" />
                     <div>
                       <h4 className="font-medium text-text">
-                        Email directo
+                        {t('contact.directEmail.title')}
                       </h4>
                       <a 
                         href="mailto:contact@rootcause.sh"
@@ -220,26 +220,24 @@ export const ContactPage: React.FC = () => {
 
               <Card>
                 <h3 className="text-xl font-bold text-text mb-4">
-                  Enterprise support
+                  {t('contact.enterprise.title')}
                 </h3>
                 <p className="text-text-secondary mb-4">
-                  ¿Necesitas soporte dedicado, SLA garantizado o consultoría personalizada? 
-                  Contáctanos para opciones enterprise.
+                  {t('contact.enterprise.description')}
                 </p>
                 <ul className="text-text-secondary text-sm space-y-1">
-                  <li>• Respuesta prioritaria en 24h</li>
-                  <li>• Reglas personalizadas</li>
-                  <li>• Integración on-premise</li>
-                  <li>• Training para equipos</li>
+                  {t('contact.enterprise.features').map((feature: string, index: number) => (
+                    <li key={index}>• {feature}</li>
+                  ))}
                 </ul>
               </Card>
 
               <Card className="bg-primary/5 border-primary/20">
                 <h3 className="text-xl font-bold text-text mb-4">
-                  PGP Encryption
+                  {t('contact.pgp.title')}
                 </h3>
                 <p className="text-text-secondary text-sm mb-4">
-                  Para comunicaciones sensibles, puedes usar nuestra clave PGP pública.
+                  {t('contact.pgp.description')}
                 </p>
                 <code className="text-xs text-text-secondary font-mono bg-bg p-2 rounded block">
                   Fingerprint: 1234 5678 9ABC DEF0 1234 5678 9ABC DEF0 12345678

@@ -2,31 +2,33 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import * as Icons from 'lucide-react';
 import { useScrollReveal, scrollRevealVariants } from '../../hooks/useScrollReveal';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const Timeline: React.FC = () => {
   const ref = useRef(null);
   const controls = useScrollReveal(ref);
+  const { t } = useLanguage();
 
   const steps = [
     {
       icon: 'Download',
-      title: 'Fetch',
-      description: 'Clone repo or fetch rules from registry'
+      title: t('timeline.steps.fetch.title'),
+      description: t('timeline.steps.fetch.description')
     },
     {
       icon: 'FileSearch',
-      title: 'Parse',
-      description: 'Multi-threaded parsing of source files'
+      title: t('timeline.steps.parse.title'),
+      description: t('timeline.steps.parse.description')
     },
     {
       icon: 'Target',
-      title: 'Match',
-      description: 'Pattern matching against AST and text'
+      title: t('timeline.steps.match.title'),
+      description: t('timeline.steps.match.description')
     },
     {
       icon: 'FileText',
-      title: 'Report',
-      description: 'Generate SARIF, JSON, or custom format'
+      title: t('timeline.steps.report.title'),
+      description: t('timeline.steps.report.description')
     }
   ];
 
@@ -41,10 +43,10 @@ export const Timeline: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-text mb-6">
-            How it works
+            {t('timeline.title')}
           </h2>
           <p className="text-xl text-text-secondary">
-            Four steps to comprehensive security analysis
+            {t('timeline.subtitle')}
           </p>
         </div>
 

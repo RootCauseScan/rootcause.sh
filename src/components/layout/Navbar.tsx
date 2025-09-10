@@ -4,16 +4,19 @@ import { motion } from 'framer-motion';
 import { Menu, X, Github, ExternalLink } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { ThemeToggle } from '../ui/ThemeToggle';
+import { LanguageToggle } from '../ui/LanguageToggle';
 import { Logo } from '../ui/Logo';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navItems = [
-    { name: 'Rules', path: '/rules' },
-    { name: 'Docs', path: 'https://docs.rootcause.sh', external: true },
-    { name: 'Contact', path: '/contact' }
+    { name: t('nav.rules'), path: '/rules' },
+    { name: t('nav.docs'), path: 'https://docs.rootcause.sh', external: true },
+    { name: t('nav.contact'), path: '/contact' }
   ];
 
   const isActive = (path: string) => {
@@ -66,6 +69,7 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
+            <LanguageToggle />
             <ThemeToggle />
             <Button 
               variant="ghost" 
@@ -123,6 +127,7 @@ export const Navbar: React.FC = () => {
                 )
               ))}
               <div className="flex items-center space-x-4 px-2 pt-4 border-t border-border">
+                <LanguageToggle />
                 <ThemeToggle />
                 <Button 
                   variant="ghost" 

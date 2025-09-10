@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import * as Icons from 'lucide-react';
 import { useScrollReveal, scrollRevealVariants } from '../../hooks/useScrollReveal';
-import { features } from '../../data/features';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { CodeBlock } from '../ui/CodeBlock';
@@ -10,6 +10,7 @@ import { CodeBlock } from '../ui/CodeBlock';
 export const Features: React.FC = () => {
   const ref = useRef(null);
   const controls = useScrollReveal(ref);
+  const { t } = useLanguage();
 
   const demoCode = `$ rootcause scan ./src
 [██████████████████████████████] 847 files (2.3s)
@@ -32,10 +33,10 @@ Found 12 issues:
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-text mb-6">
-            Built for modern teams
+            {t('features.title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            Un solo tool para todos tus proyectos. Sin vendor lock-in.
+            {t('features.subtitle')}
           </p>
         </div>
 
@@ -45,16 +46,16 @@ Found 12 issues:
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <Icons.Zap className="text-primary" size={32} />
-                <Badge variant="primary">Rust-powered</Badge>
+                <Badge variant="primary">{t('features.speed.badge')}</Badge>
               </div>
               <h3 className="text-3xl font-bold text-text mb-4">
-                {features[0].title}
+                {t('features.speed.title')}
               </h3>
               <p className="text-xl text-text-secondary mb-6">
-                {features[0].description}
+                {t('features.speed.description')}
               </p>
               <p className="text-text-secondary">
-                {features[0].details}
+                {t('features.speed.details')}
               </p>
             </div>
             <Card>
@@ -72,7 +73,8 @@ Found 12 issues:
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <h4 className="font-medium text-text">Rule formats supported:</h4>
-                  <Badge variant="success">rule-agnostic</Badge>
+                  <h4 className="font-medium text-text">{t('features.rules.supported')}</h4>
+                  <Badge variant="success">{t('features.rules.ruleAgnostic')}</Badge>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {['Semgrep', 'YAML', 'JSON', 'Regex'].map((format) => (
@@ -86,16 +88,16 @@ Found 12 issues:
             <div className="order-1 lg:order-2">
               <div className="flex items-center space-x-3 mb-4">
                 <Icons.Settings className="text-primary" size={32} />
-                <Badge variant="primary">Compatible</Badge>
+                <Badge variant="primary">{t('features.rules.badge')}</Badge>
               </div>
               <h3 className="text-3xl font-bold text-text mb-4">
-                {features[1].title}
+                {t('features.rules.title')}
               </h3>
               <p className="text-xl text-text-secondary mb-6">
-                {features[1].description}
+                {t('features.rules.description')}
               </p>
               <p className="text-text-secondary">
-                {features[1].details}
+                {t('features.rules.details')}
               </p>
             </div>
           </div>
@@ -105,16 +107,16 @@ Found 12 issues:
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <Icons.Code className="text-primary" size={32} />
-                <Badge variant="primary">8+ languages</Badge>
+                <Badge variant="primary">{t('features.multilang.badge')}</Badge>
               </div>
               <h3 className="text-3xl font-bold text-text mb-4">
-                {features[2].title}
+                {t('features.multilang.title')}
               </h3>
               <p className="text-xl text-text-secondary mb-6">
-                {features[2].description}
+                {t('features.multilang.description')}
               </p>
               <p className="text-text-secondary">
-                {features[2].details}
+                {t('features.multilang.details')}
               </p>
             </div>
             <Card>
@@ -157,16 +159,16 @@ security_scan:
             <div className="order-1 lg:order-2">
               <div className="flex items-center space-x-3 mb-4">
                 <Icons.GitBranch className="text-primary" size={32} />
-                <Badge variant="success">SARIF ready</Badge>
+                <Badge variant="success">{t('features.ci.badge')}</Badge>
               </div>
               <h3 className="text-3xl font-bold text-text mb-4">
-                {features[3].title}
+                {t('features.ci.title')}
               </h3>
               <p className="text-xl text-text-secondary mb-6">
-                {features[3].description}
+                {t('features.ci.description')}
               </p>
               <p className="text-text-secondary">
-                {features[3].details}
+                {t('features.ci.details')}
               </p>
             </div>
           </div>

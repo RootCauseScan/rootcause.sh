@@ -1,11 +1,19 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
-import { stats } from '../../data/features';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const KeyStats: React.FC = () => {
   const ref = useRef(null);
   const controls = useScrollReveal(ref);
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: '<100ms', label: t('stats.perFile'), description: t('stats.avgAnalysis') },
+    { value: 'SARIF', label: t('stats.ready'), description: t('stats.cicdOutput') },
+    { value: '8+', label: t('stats.languages'), description: t('stats.nativeSupport') },
+    { value: 'OSS', label: t('stats.license'), description: t('stats.apacheLicense') }
+  ];
 
   return (
     <section ref={ref} className="py-20 bg-surface">

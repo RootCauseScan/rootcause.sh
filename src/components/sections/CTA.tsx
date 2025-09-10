@@ -2,11 +2,13 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Github } from 'lucide-react';
 import { useScrollReveal, scrollRevealVariants } from '../../hooks/useScrollReveal';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { Button } from '../ui/Button';
 
 export const CTA: React.FC = () => {
   const ref = useRef(null);
   const controls = useScrollReveal(ref);
+  const { t } = useLanguage();
 
   return (
     <motion.section
@@ -23,13 +25,12 @@ export const CTA: React.FC = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-6xl font-bold text-text mb-6">
-            Start catching real bugs
-            <span className="text-primary block">today</span>
+            {t('cta.title')}
+            <span className="text-primary block">{t('cta.titleAccent')}</span>
           </h2>
           
           <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-            Join the developers already using rootcause to secure their code.
-            Open source. No vendor lock-in. Apache 2.0 license.
+            {t('cta.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -40,7 +41,7 @@ export const CTA: React.FC = () => {
               href="https://docs.rootcause.sh"
               external
             >
-              Read the Docs
+              {t('cta.readDocs')}
             </Button>
             <Button 
               variant="secondary" 
@@ -49,12 +50,12 @@ export const CTA: React.FC = () => {
               href="https://github.com/RootCauseScan/scanner"
               external
             >
-              Star on GitHub
+              {t('cta.starGithub')}
             </Button>
           </div>
 
           <div className="mt-8 text-text-secondary text-sm">
-            <p>Free forever. No registration required.</p>
+            <p>{t('cta.footer')}</p>
           </div>
         </motion.div>
       </div>

@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 import { Github, ExternalLink } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { Logo } from '../ui/Logo';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   const links = [
-    { name: 'GitHub', href: 'https://github.com/RootCauseScan/scanner', external: true },
-    { name: 'Docs', href: 'https://docs.rootcause.sh', external: true },
-    { name: 'Blog', href: '#', external: false },
-    { name: 'Privacy', href: '#', external: false }
+    { name: t('footer.links.github'), href: 'https://github.com/RootCauseScan/scanner', external: true },
+    { name: t('footer.links.docs'), href: 'https://docs.rootcause.sh', external: true },
+    { name: t('footer.links.blog'), href: '#', external: false },
+    { name: t('footer.links.privacy'), href: '#', external: false }
   ];
 
   return (
@@ -23,7 +26,7 @@ export const Footer: React.FC = () => {
               <span className="text-lg font-bold text-text">rootcause</span>
             </div>
             <p className="text-text-secondary text-sm max-w-md">
-              SAST open source en Rust. Rápido, extensible, multi-lenguaje.
+              {t('footer.description')}
             </p>
           </div>
 
@@ -40,8 +43,8 @@ export const Footer: React.FC = () => {
                     className="flex items-center space-x-1 text-text-secondary hover:text-text transition-colors text-sm"
                   >
                     <span>{link.name}</span>
-                    {link.name === 'GitHub' && <Github size={14} />}
-                    {link.name === 'Docs' && <ExternalLink size={14} />}
+                    {link.name === t('footer.links.github') && <Github size={14} />}
+                    {link.name === t('footer.links.docs') && <ExternalLink size={14} />}
                   </a>
                 ) : (
                   <Link
@@ -60,10 +63,10 @@ export const Footer: React.FC = () => {
 
         <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-text-secondary text-sm">
-            © 2025 rootcause. Licensed under Apache 2.0.
+            {t('footer.copyright')}
           </p>
           <p className="text-text-secondary text-xs">
-            Built with React, TypeScript, and Tailwind CSS
+            {t('footer.builtWith')}
           </p>
         </div>
       </div>
