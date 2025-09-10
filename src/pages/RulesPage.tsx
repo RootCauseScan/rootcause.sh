@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useScrollReveal, scrollRevealVariants } from '../hooks/useScrollReveal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card } from '../components/ui/Card';
@@ -78,8 +78,6 @@ languages: [c, cpp]`,
               <Button 
                 href="https://docs.rootcause.sh/rules"
                 external
-                icon={ExternalLink}
-                iconPosition="right"
               >
                 {t('rules.viewDocs')}
               </Button>
@@ -190,8 +188,6 @@ languages: [c, cpp]`,
             <Button 
               href="https://docs.rootcause.sh/rules/examples"
               external
-              icon={ExternalLink}
-              iconPosition="right"
             >
               {t('rules.examples.viewExamples')}
             </Button>

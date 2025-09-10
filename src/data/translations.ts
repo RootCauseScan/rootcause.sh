@@ -1,6 +1,7 @@
 export const translations = {
   es: {
     nav: {
+      home: 'Inicio',
       rules: 'Reglas',
       docs: 'Docs',
       contact: 'Contacto'
@@ -188,6 +189,7 @@ export const translations = {
   },
   en: {
     nav: {
+      home: 'Home',
       rules: 'Rules',
       docs: 'Docs',
       contact: 'Contact'
