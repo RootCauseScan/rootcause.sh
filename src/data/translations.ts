@@ -116,7 +116,13 @@ export const translations = {
         viewExamples: 'Ver ejemplos en Docs'
       },
       ruleLabel: 'Regla:',
-      vulnerableCode: 'Código vulnerable detectado:'
+      vulnerableCode: 'Código vulnerable detectado:',
+      ruleTypes: {
+        yaml: 'Sintaxis limpia para reglas de seguridad',
+        taint: 'Detección de algoritmos de hash inseguros',
+        opa: 'Políticas complejas con WebAssembly',
+        json: 'Configuraciones estructuradas'
+      }
     },
     docs: {
       title: 'Documentación',
@@ -144,7 +150,7 @@ export const translations = {
         email: 'Email',
         message: 'Mensaje',
         namePlaceholder: 'Tu nombre',
-        emailPlaceholder: 'tu@ejemplo.com',
+        emailPlaceholder: 'tu@email.com',
         messagePlaceholder: 'Cuéntanos cómo podemos ayudarte...',
         send: 'Enviar mensaje'
       },
@@ -304,7 +310,13 @@ export const translations = {
         viewExamples: 'View examples in Docs'
       },
       ruleLabel: 'Rule:',
-      vulnerableCode: 'Vulnerable code detected:'
+      vulnerableCode: 'Vulnerable code detected:',
+      ruleTypes: {
+        yaml: 'Clean syntax for security rules',
+        taint: 'Detection of insecure hashing algorithms',
+        opa: 'Complex policies with WebAssembly',
+        json: 'Structured configurations'
+      }
     },
     docs: {
       title: 'Documentation',
@@ -332,7 +344,7 @@ export const translations = {
         email: 'Email',
         message: 'Message',
         namePlaceholder: 'Your name',
-        emailPlaceholder: 'you@example.com',
+        emailPlaceholder: 'your@email.com',
         messagePlaceholder: 'Tell us how we can help you...',
         send: 'Send message'
       },

@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
   const links = [
     { name: t('footer.links.github'), href: 'https://github.com/RootCauseScan/scanner', external: true },
     { name: t('footer.links.docs'), href: 'https://docs.rootcause.sh', external: true },
-    { name: t('footer.links.blog'), href: '#', external: false },
-    { name: t('footer.links.privacy'), href: '#', external: false }
+    { name: t('footer.links.blog'), href: 'https://www.m3str3.com/posts', external: true },
+    { name: t('footer.links.privacy'), href: '/privacy', external: false }
   ];
 
   return (

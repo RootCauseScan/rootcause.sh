@@ -12,13 +12,18 @@ export const Features: React.FC = () => {
   const controls = useScrollReveal(ref);
   const { t } = useLanguage();
 
-  const demoCode = `$ rootcause scan ./src
-[██████████████████████████████] 847 files (2.3s)
+  const demoCode = `$> rootcause ./src
+⚠ Se encontraron 2 problemas:
 
-Found 12 issues:
-  ❌ SQL injection (high)     src/user.py:42
-  ⚠️  Hardcoded secret (med)  config/app.js:15
-  ❌ Buffer overflow (crit)   lib/parser.c:128`;
+HIGH src/api/users.py:23 sql-injection
+    SQL injection vulnerability detected
+    ↳  cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
+
+CRITICAL src/templates/dashboard.html:15 xss-reflected
+    Reflected XSS in user input
+    ↳  <div>Welcome {{ user_input }}</div>
+
+Total: 2`;
 
   const languages = ['C/C++', 'Go', 'Java', 'JavaScript', 'TypeScript', 'Python', 'Rust', 'PHP'];
 

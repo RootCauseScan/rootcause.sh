@@ -122,7 +122,7 @@ export const Hero: React.FC = () => {
           >
             <p className="text-code text-sm mb-2">{t('hero.quickInstall')}</p>
             <code className="text-primary font-mono text-sm">
-              curl -sSL https://get.rootcause.sh | sh
+              curl -sSL https://rootcause.sh/install.sh | sh
             </code>
           </motion.div>
         </motion.div>
