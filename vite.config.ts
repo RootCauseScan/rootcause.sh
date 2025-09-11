@@ -7,4 +7,10 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  preview: {
+    allowedHosts: ['rootcause.sh', 'localhost', '127.0.0.1'],
+  },
+  server: {
+    allowedHosts: ['rootcause.sh', 'localhost', '127.0.0.1'],
+  },
 });
