@@ -5,17 +5,21 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    // Primero verificar si hay un parámetro ?theme= en la URL
+    // 1. Primero verificar si hay un parámetro ?theme= en la URL
     const urlParams = new URLSearchParams(window.location.search);
     const urlTheme = urlParams.get('theme');
     if (urlTheme === 'light' || urlTheme === 'dark') {
       return urlTheme;
     }
     
-    // Si no hay parámetro, usar localStorage
+    // 2. Si no hay parámetro, usar localStorage
     const saved = localStorage.getItem('theme');
-    if (saved) return saved as 'light' | 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (saved === 'light' || saved === 'dark') {
+      return saved;
+    }
+    
+    // 3. Si tampoco existe localStorage, por defecto tema light
+    return 'light';
   });
 
   const toggleTheme = () => {
