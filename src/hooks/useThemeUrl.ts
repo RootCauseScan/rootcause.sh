@@ -6,6 +6,7 @@ export const useThemeUrl = () => {
   const addThemeToUrl = (url: string): string => {
     try {
       const urlObj = new URL(url);
+      // Siempre agregar el parámetro theme basado en el tema actual
       urlObj.searchParams.set('theme', theme);
       return urlObj.toString();
     } catch {

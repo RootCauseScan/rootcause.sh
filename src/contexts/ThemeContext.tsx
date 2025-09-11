@@ -30,10 +30,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     localStorage.setItem('theme', theme);
     document.documentElement.classList.toggle('dark', theme === 'dark');
     
-    // Actualizar la URL con el parámetro theme
-    const url = new URL(window.location.href);
-    url.searchParams.set('theme', theme);
-    window.history.replaceState({}, '', url.toString());
+    // NO modificar la URL - solo leer el parámetro si viene
   }, [theme]);
 
   return (
