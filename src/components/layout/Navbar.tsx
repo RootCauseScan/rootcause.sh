@@ -7,11 +7,13 @@ import { ThemeToggle } from '../ui/ThemeToggle';
 import { LanguageToggle } from '../ui/LanguageToggle';
 import { Logo } from '../ui/Logo';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useThemeUrl } from '../../hooks/useThemeUrl';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const { t } = useLanguage();
+  const { addThemeToUrl } = useThemeUrl();
 
   const navItems = [
     { name: t('nav.home'), path: '/' },
@@ -46,7 +48,7 @@ export const Navbar: React.FC = () => {
               item.external ? (
                 <a
                   key={item.name}
-                  href={item.path}
+                  href={addThemeToUrl(item.path)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-1 text-text-secondary hover:text-text transition-colors"
@@ -106,7 +108,7 @@ export const Navbar: React.FC = () => {
                 item.external ? (
                   <a
                     key={item.name}
-                    href={item.path}
+                    href={addThemeToUrl(item.path)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-1 text-text-secondary hover:text-text transition-colors px-2 py-1"

@@ -4,9 +4,11 @@ import { Github, ExternalLink } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { Logo } from '../ui/Logo';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useThemeUrl } from '../../hooks/useThemeUrl';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
+  const { addThemeToUrl } = useThemeUrl();
 
   const links = [
     { name: t('footer.links.github'), href: 'https://github.com/RootCauseScan/scanner', external: true },
@@ -37,7 +39,7 @@ export const Footer: React.FC = () => {
                 link.external ? (
                   <a
                     key={link.name}
-                    href={link.href}
+                    href={addThemeToUrl(link.href)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-1 text-text-secondary hover:text-text transition-colors text-sm"
