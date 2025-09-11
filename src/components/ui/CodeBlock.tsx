@@ -7,13 +7,15 @@ interface CodeBlockProps {
   language?: string;
   copyable?: boolean;
   className?: string;
+  variant?: 'default' | 'embedded';
 }
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({ 
   code, 
   language = '', 
   copyable = true,
-  className = '' 
+  className = '',
+  variant = 'default'
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -23,9 +25,13 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const containerClasses = variant === 'embedded' 
+    ? `relative ${className}`
+    : `relative bg-code border border-code rounded-xl p-6 ${className}`;
+
   return (
-    <div className={`relative ${className}`}>
-      <pre className="bg-code border border-code rounded-lg p-4 overflow-x-auto">
+    <div className={containerClasses}>
+      <pre className={variant === 'embedded' ? 'bg-surface/20 border border-surface/30 rounded-lg p-4 overflow-x-auto' : 'overflow-x-auto'}>
         <code className="font-mono text-sm text-code">
           {code}
         </code>

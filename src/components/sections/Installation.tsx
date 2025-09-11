@@ -30,7 +30,7 @@ export const Installation: React.FC = () => {
           </p>
         </div>
 
-        <Card className="max-w-4xl mx-auto">
+        <Card className="bg-bg max-w-4xl mx-auto">
           {/* Tab buttons */}
           <div className="flex flex-wrap gap-2 mb-8 border-b border-border pb-4">
             {installMethods.map((method, index) => (
@@ -69,7 +69,7 @@ export const Installation: React.FC = () => {
           </motion.div>
 
           {/* Quick start */}
-          <div className="mt-8 p-4 bg-surface rounded-lg">
+          <div className="mt-8 rounded-lg">
             <h4 className="font-medium text-text mb-2">{t('installation.quickStart')}</h4>
             <CodeBlock 
               code={`# Scan current directory

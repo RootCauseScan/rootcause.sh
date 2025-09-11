@@ -58,33 +58,31 @@ Found 12 issues:
                 {t('features.speed.details')}
               </p>
             </div>
-            <Card>
-              <CodeBlock
-                code={demoCode}
-                copyable={false}
-                className="text-sm"
-              />
-            </Card>
+            <CodeBlock
+              code={demoCode}
+              copyable={false}
+              className="text-sm"
+            />
           </div>
 
           {/* Rules Feature */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Card className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 bg-code border border-code rounded-xl p-6">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h4 className="font-medium text-text">Rule formats supported:</h4>
-                  <h4 className="font-medium text-text">{t('features.rules.supported')}</h4>
+                  <h4 className="font-medium text-code">Rule formats supported:</h4>
+                  <h4 className="font-medium text-code">{t('features.rules.supported')}</h4>
                   <Badge variant="success">{t('features.rules.ruleAgnostic')}</Badge>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {['Semgrep', 'YAML', 'JSON', 'Regex'].map((format) => (
-                    <div key={format} className="p-3 bg-surface rounded-lg text-center">
-                      <span className="text-text font-mono text-sm">{format}</span>
+                    <div key={format} className="p-3 bg-surface/20 rounded-lg text-center">
+                      <span className="text-code font-mono text-sm">{format}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            </Card>
+            </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center space-x-3 mb-4">
                 <Icons.Settings className="text-primary" size={32} />
@@ -119,7 +117,7 @@ Found 12 issues:
                 {t('features.multilang.details')}
               </p>
             </div>
-            <Card>
+            <div className="bg-code border border-code rounded-xl p-6">
               <div className="grid grid-cols-2 gap-3">
                 {languages.map((lang, index) => (
                   <motion.div
@@ -127,18 +125,18 @@ Found 12 issues:
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
-                    className="p-3 bg-primary/10 rounded-lg text-center hover:bg-primary/20 transition-colors"
+                    className="p-3 bg-primary/20 rounded-lg text-center hover:bg-primary/30 transition-colors"
                   >
                     <span className="text-primary font-medium">{lang}</span>
                   </motion.div>
                 ))}
               </div>
-            </Card>
+            </div>
           </div>
 
           {/* CI Integration Feature */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <Card className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1">
               <CodeBlock
                 code={`# GitHub Actions
 - name: Security Scan
@@ -155,7 +153,7 @@ security_scan:
       sast: results.sarif`}
                 language="yaml"
               />
-            </Card>
+            </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center space-x-3 mb-4">
                 <Icons.GitBranch className="text-primary" size={32} />
