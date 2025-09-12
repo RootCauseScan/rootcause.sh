@@ -31,7 +31,7 @@ export const stats: Stat[] = [
   { value: '<100ms', label: 'por archivo', description: 'Tiempo de análisis promedio' },
   { value: 'SARIF', label: 'ready', description: 'Salida estándar para CI/CD' },
   { value: '8+', label: 'lenguajes', description: 'Soporte nativo' },
-  { value: 'OSS', label: 'permisivo', description: 'Licencia Apache 2.0' }
+  { value: 'OSS', label: 'permisivo', description: 'Licencia GPL v3' }
 ];
 
 export const ruleFormats: RuleFormat[] = [

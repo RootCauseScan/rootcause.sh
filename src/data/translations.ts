@@ -7,7 +7,7 @@ export const translations = {
       contact: 'Contacto'
     },
     hero: {
-      badge: 'SAST Open Source • Apache 2.0',
+      badge: 'SAST Open Source • GPL v3',
       title: 'Find the root.',
       titleAccent: 'Fast.',
       subtitle: 'SAST open source en Rust. Rápido, extensible, multi-lenguaje.',
@@ -27,7 +27,7 @@ export const translations = {
       languages: 'lenguajes',
       nativeSupport: 'Soporte nativo',
       license: 'permisivo',
-      apacheLicense: 'Licencia Apache 2.0'
+      apacheLicense: 'Licencia GPL v3'
     },
     features: {
       title: 'Construido para equipos modernos',
@@ -90,7 +90,7 @@ export const translations = {
     cta: {
       title: 'Comienza a detectar bugs reales',
       titleAccent: 'hoy',
-      subtitle: 'Únete a los desarrolladores que ya usan rootcause para asegurar su código. Open source. Sin vendor lock-in. Licencia Apache 2.0.',
+      subtitle: 'Únete a los desarrolladores que ya usan rootcause para asegurar su código. Open source. Sin vendor lock-in. Licencia GPL v3.',
       readDocs: 'Leer la Documentación',
       starGithub: 'Star en GitHub',
       footer: 'Gratis para siempre. Sin registro requerido.'
@@ -184,7 +184,7 @@ export const translations = {
     },
     footer: {
       description: 'SAST open source en Rust. Rápido, extensible, multi-lenguaje.',
-      copyright: '© 2025 rootcause. Licenciado bajo Apache 2.0.',
+      copyright: '© 2025 rootcause. Licenciado bajo GPL v3.',
       builtWith: 'Construido con React, TypeScript, y Tailwind CSS',
       links: {
         github: 'GitHub',
@@ -202,7 +202,7 @@ export const translations = {
       contact: 'Contact'
     },
     hero: {
-      badge: 'Open Source SAST • Apache 2.0',
+      badge: 'Open Source SAST • GPL v3',
       title: 'Find the root.',
       titleAccent: 'Fast.',
       subtitle: 'Open source SAST in Rust. Fast, extensible, multi-language.',
@@ -222,7 +222,7 @@ export const translations = {
       languages: 'languages',
       nativeSupport: 'Native support',
       license: 'permissive',
-      apacheLicense: 'Apache 2.0 License'
+      apacheLicense: 'GPL v3 License'
     },
     features: {
       title: 'Built for modern teams',
@@ -285,7 +285,7 @@ export const translations = {
     cta: {
       title: 'Start catching real bugs',
       titleAccent: 'today',
-      subtitle: 'Join the developers already using rootcause to secure their code. Open source. No vendor lock-in. Apache 2.0 license.',
+      subtitle: 'Join the developers already using rootcause to secure their code. Open source. No vendor lock-in. GPL v3 license.',
       readDocs: 'Read the Docs',
       starGithub: 'Star on GitHub',
       footer: 'Free forever. No registration required.'
@@ -379,7 +379,7 @@ export const translations = {
     },
     footer: {
       description: 'Open source SAST in Rust. Fast, extensible, multi-language.',
-      copyright: '© 2025 rootcause. Licensed under Apache 2.0.',
+      copyright: '© 2025 rootcause. Licensed under GPL v3.',
       builtWith: 'Built with React, TypeScript, and Tailwind CSS',
       links: {
         github: 'GitHub',
