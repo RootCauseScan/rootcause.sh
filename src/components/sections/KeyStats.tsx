@@ -16,7 +16,7 @@ export const KeyStats: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-surface">
+    <section ref={ref} className="py-20 bg-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

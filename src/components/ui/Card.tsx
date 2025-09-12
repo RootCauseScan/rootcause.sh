@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <motion.div
-      className={`border border-border rounded-xl p-6 ${className}`}
+      className={`bg-card border border-border rounded-xl p-6 ${className}`}
       whileHover={hover ? { y: -2, scale: 1.01 } : undefined}
       transition={{ duration: 0.2 }}
     >

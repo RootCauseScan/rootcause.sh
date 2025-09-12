@@ -18,7 +18,7 @@ export const Installation: React.FC = () => {
       initial="hidden"
       animate={controls}
       variants={scrollRevealVariants}
-      className="py-20 bg-surface"
+      className="py-20 bg-section"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

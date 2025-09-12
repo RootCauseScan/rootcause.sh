@@ -8,14 +8,16 @@
 @layer base {
   :root {
     /* Light theme colors */
-    --color-bg: #FFFFFF;
-    --color-surface: #E5E7EB;
+    --color-bg: #F8F8F8;
+    --color-surface: #F0F0F0;
+    --color-card: #FFFFFF;
+    --color-section: #F5F5F5;
     --color-primary: #FFD700;
     --color-accent: #FFE55C;
     --color-secondary: #E6C200;
     --color-text: #151517;
     --color-text-secondary: #53535A;
-    --color-border: #E5E7EB;
+    --color-border: #D1D5DB;
     --color-code-bg: #2D2D30;
     --color-code-border: #151517;
     --color-code-text: #F5F5DC;
@@ -25,6 +27,8 @@
     /* Dark theme colors */
     --color-bg: #0B0B0C;
     --color-surface: #121214;
+    --color-card: #1A1A1C;
+    --color-section: #151517;
     --color-primary: #FFE55C;
     --color-accent: #FFF176;
     --color-secondary: #FFD54F;
@@ -87,6 +91,14 @@
 
   .bg-surface {
     background-color: var(--color-surface);
+  }
+
+  .bg-card {
+    background-color: var(--color-card);
+  }
+
+  .bg-section {
+    background-color: var(--color-section);
   }
 
   .bg-primary {

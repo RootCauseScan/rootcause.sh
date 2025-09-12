@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-surface border-t border-border">
+    <footer className="bg-section border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
           {/* Logo and description */}
