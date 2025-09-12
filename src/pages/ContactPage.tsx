@@ -92,8 +92,8 @@ export const ContactPage: React.FC = () => {
                   </h3>
                   <p className="text-text-secondary">
                     {t('contact.messageSentDesc')}{' '}
-                    <a href="mailto:hello@rootcause.sh" className="text-primary hover:underline">
-                      hello@rootcause.sh
+                    <a href="mailto:contact@rootcause.sh" className="text-primary hover:underline">
+                      contact@rootcause.sh
                     </a>
                   </p>
                 </div>
@@ -239,9 +239,19 @@ export const ContactPage: React.FC = () => {
                 <p className="text-text-secondary text-sm mb-4">
                   {t('contact.pgp.description')}
                 </p>
-                <code className="text-xs text-text-secondary font-mono bg-bg p-2 rounded block">
-                  Fingerprint: 1234 5678 9ABC DEF0 1234 5678 9ABC DEF0 12345678
+                <code className="text-xs text-text-secondary font-mono bg-bg p-2 rounded block mb-3">
+                  Fingerprint: 42BF 8610 6A7B 3D90 14DB CD78 E98A 52BF 75F9 540B
                 </code>
+                <a
+                  href="/rootcause-pgp-public.asc"
+                  download="rootcause-pgp-public.asc"
+                  className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors"
+                >
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  {t('contact.pgp.downloadKey')}
+                </a>
               </Card>
             </div>
           </div>

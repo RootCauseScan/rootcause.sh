@@ -178,7 +178,8 @@ export const translations = {
       },
       pgp: {
         title: 'PGP Encryption',
-        description: 'Para comunicaciones sensibles, puedes usar nuestra clave PGP pública.'
+        description: 'Para comunicaciones sensibles, puedes usar nuestra clave PGP pública.',
+        downloadKey: 'Descargar clave pública'
       }
     },
     footer: {
@@ -372,7 +373,8 @@ export const translations = {
       },
       pgp: {
         title: 'PGP Encryption',
-        description: 'For sensitive communications, you can use our public PGP key.'
+        description: 'For sensitive communications, you can use our public PGP key.',
+        downloadKey: 'Download public key'
       }
     },
     footer: {
