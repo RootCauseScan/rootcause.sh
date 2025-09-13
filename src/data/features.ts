@@ -16,7 +16,7 @@ export const features: Feature[] = [
   {
     icon: 'Code',
     title: 'Multi-lenguaje',
-    description: 'C/C++, Go, Java, JavaScript/TypeScript, Python, Rust y más.',
+    description: 'Rust, Python, PHP, Java y lenguajes de configuración.',
     details: 'Un solo tool para todos tus proyectos'
   },
   {
@@ -30,7 +30,7 @@ export const features: Feature[] = [
 export const stats: Stat[] = [
   { value: '<100ms', label: 'por archivo', description: 'Tiempo de análisis promedio' },
   { value: 'SARIF', label: 'ready', description: 'Salida estándar para CI/CD' },
-  { value: '8+', label: 'lenguajes', description: 'Soporte nativo' },
+  { value: '4+', label: 'lenguajes', description: 'Soporte nativo' },
   { value: 'OSS', label: 'permisivo', description: 'Licencia GPL v3' }
 ];
 

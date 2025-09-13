@@ -11,7 +11,7 @@ export const KeyStats: React.FC = () => {
   const stats = [
     { value: '<100ms', label: t('stats.perFile'), description: t('stats.avgAnalysis') },
     { value: 'SARIF', label: t('stats.ready'), description: t('stats.cicdOutput') },
-    { value: '8+', label: t('stats.languages'), description: t('stats.nativeSupport') },
+    { value: '4+', label: t('stats.languages'), description: t('stats.nativeSupport') },
     { value: 'OSS', label: t('stats.license'), description: t('stats.apacheLicense') }
   ];
 

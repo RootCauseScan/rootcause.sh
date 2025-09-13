@@ -25,7 +25,7 @@ CRITICAL src/templates/dashboard.html:15 xss-reflected
 
 Total: 2`;
 
-  const languages = ['C/C++', 'Go', 'Java', 'JavaScript', 'TypeScript', 'Python', 'Rust', 'PHP'];
+  const languages = ['Rust', 'Python', 'PHP', 'Java'];
 
   return (
     <motion.section
@@ -120,6 +120,9 @@ Total: 2`;
               </p>
               <p className="text-text-secondary">
                 {t('features.multilang.details')}
+              </p>
+              <p className="text-sm text-text-secondary/80 mt-2">
+                {t('features.multilang.configNote')}
               </p>
             </div>
             <div className="bg-code border border-code rounded-xl p-6">

@@ -47,10 +47,11 @@ export const translations = {
         ruleAgnostic: 'rule-agnostic'
       },
       multilang: {
-        badge: '8+ lenguajes',
+        badge: '4+ lenguajes',
         title: 'Multi-lenguaje',
-        description: 'C/C++, Go, Java, JavaScript/TypeScript, Python, Rust y más.',
-        details: 'Un solo tool para todos tus proyectos'
+        description: 'Rust, Python, PHP, Java y lenguajes de configuración.',
+        details: 'Un solo tool para todos tus proyectos',
+        configNote: 'Más lenguajes de configuración: YAML, Docker, HCL, JSON'
       },
       ci: {
         badge: 'SARIF ready',
@@ -242,10 +243,11 @@ export const translations = {
         ruleAgnostic: 'rule-agnostic'
       },
       multilang: {
-        badge: '8+ languages',
+        badge: '4+ languages',
         title: 'Multi-language',
-        description: 'C/C++, Go, Java, JavaScript/TypeScript, Python, Rust and more.',
-        details: 'One tool for all your projects'
+        description: 'Rust, Python, PHP, Java and configuration languages.',
+        details: 'One tool for all your projects',
+        configNote: 'Plus configuration languages: YAML, Docker, HCL, JSON'
       },
       ci: {
         badge: 'SARIF ready',
