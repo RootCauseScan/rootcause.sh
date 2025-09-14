@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # RootCause SAST Tool Professional Installer
 # https://rootcause.sh
@@ -47,30 +47,30 @@ readonly ICON_PROGRESS="⏳"
 # =============================================================================
 
 # Logging functions
-log_info() { echo -e "${BLUE}${ICON_INFO} [INFO]${NC} $*"; }
-log_warn() { echo -e "${YELLOW}${ICON_WARNING} [WARN]${NC} $*"; }
-log_error() { echo -e "${RED}${ICON_ERROR} [ERROR]${NC} $*" >&2; }
-log_debug() { echo -e "${PURPLE}${ICON_DEBUG} [DEBUG]${NC} $*"; }
-show_progress() { echo -e "${CYAN}${ICON_PROGRESS} $*${NC}"; }
-show_success() { echo -e "${GREEN}${ICON_SUCCESS} $*${NC}"; }
+log_info() { printf "%b\n" "${BLUE}${ICON_INFO} [INFO]${NC} $*"; }
+log_warn() { printf "%b\n" "${YELLOW}${ICON_WARNING} [WARN]${NC} $*"; }
+log_error() { printf "%b\n" "${RED}${ICON_ERROR} [ERROR]${NC} $*" >&2; }
+log_debug() { printf "%b\n" "${PURPLE}${ICON_DEBUG} [DEBUG]${NC} $*"; }
+show_progress() { printf "%b\n" "${CYAN}${ICON_PROGRESS} $*${NC}"; }
+show_success() { printf "%b\n" "${GREEN}${ICON_SUCCESS} $*${NC}"; }
 
 # Print header
 print_header() {
-    echo -e "${BOLD}${BLUE}"
-    echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║                      RootCause Scanner                       ║"
-    echo "║                          Installer                           ║"
-    echo "╚══════════════════════════════════════════════════════════════╝"
-    echo -e "${NC}"
+    printf "%b\n" "${BOLD}${BLUE}"
+    printf "%s\n" "╔══════════════════════════════════════════════════════════════╗"
+    printf "%s\n" "║                      RootCause Scanner                       ║"
+    printf "%s\n" "║                          Installer                           ║"
+    printf "%s\n" "╚══════════════════════════════════════════════════════════════╝"
+    printf "%b\n" "${NC}"
 }
 
 # Print configuration
 print_config() {
-    echo -e "${BOLD}${CYAN}Configuration:${NC}"
-    echo "  📦 Scanner repository: $SCANNER_REPO"
-    echo "  📋 Rules repository: $RULES_REPO"
-    echo "  📁 Install path: $INSTALL_PATH"
-    echo ""
+    printf "%b\n" "${BOLD}${CYAN}Configuration:${NC}"
+    printf "%s\n" "  📦 Scanner repository: $SCANNER_REPO"
+    printf "%s\n" "  📋 Rules repository: $RULES_REPO"
+    printf "%s\n" "  📁 Install path: $INSTALL_PATH"
+    printf "%s\n" ""
 }
 
 # Check if command exists
@@ -133,7 +133,7 @@ check_dependencies() {
     # Check Rust/Cargo
     if ! command_exists cargo; then
         log_error "Rust/Cargo is required but not installed. Please install Rust first."
-        echo -e "${BLUE}Visit: https://rustup.rs/${NC}"
+        printf "%b\n" "${BLUE}Visit: https://rustup.rs/${NC}"
         exit 1
     fi
     
@@ -178,7 +178,7 @@ check_existing_installation() {
              log_info "Force update enabled, proceeding with update..."
          else
              # Ask user if they want to update
-             echo -e "${YELLOW}Do you want to update to the latest version? [y/N]${NC}"
+             printf "%b" "${YELLOW}Do you want to update to the latest version? [y/N] ${NC}"
              
              # Check if stdin is available (not piped)
              if [ -t 0 ]; then
@@ -206,10 +206,8 @@ check_existing_installation() {
 # Create necessary directories
 create_directories() {
     log_info "Creating directories..."
-    
-    local dirs=("$INSTALL_PATH" "$CONFIG_DIR")
-    
-    for dir in "${dirs[@]}"; do
+    # Create directories one by one (sh compatible)
+    for dir in "$INSTALL_PATH" "$CONFIG_DIR"; do
         if [ ! -d "$dir" ]; then
             log_debug "Creating directory: $dir"
             mkdir -p "$dir" || log_error "Failed to create directory: $dir"
@@ -301,33 +299,33 @@ check_path_configuration() {
             *) shell_config="$HOME/.profile" ;;
         esac
         
-        echo -e "${YELLOW}⚠️  PATH Configuration Required${NC}"
-        echo -e "${BLUE}Add this line to your shell configuration:${NC}"
-        echo -e "${BOLD}  export PATH=\"\$PATH:$INSTALL_PATH\"${NC}"
-        echo -e "${BLUE}For your current shell ($SHELL), add it to:${NC}"
-        echo -e "${BOLD}  $shell_config${NC}"
+        printf "%b\n" "${YELLOW}⚠️  PATH Configuration Required${NC}"
+        printf "%b\n" "${BLUE}Add this line to your shell configuration:${NC}"
+        printf "%b\n" "${BOLD}  export PATH=\"\$PATH:$INSTALL_PATH\"${NC}"
+        printf "%b\n" "${BLUE}For your current shell ($SHELL), add it to:${NC}"
+        printf "%b\n" "${BOLD}  $shell_config${NC}"
     fi
 }
 
 # Show usage information
 show_usage_info() {
-    echo ""
-    echo -e "${BOLD}${GREEN}🎉 Installation Complete!${NC}"
-    echo ""
-    echo -e "${BOLD}${BLUE}Usage Examples:${NC}"
-    echo "  rootcause scan ./src                    # Scan source directory"
-    echo "  rootcause scan . --format json          # Scan with JSON output"
-    echo "  rootcause rules list                    # List installed rules"
-    echo "  rootcause rules install <url> -n <name> # Install custom rules"
-    echo ""
-    echo -e "${BOLD}${BLUE}Documentation:${NC}"
-    echo "  📖 https://docs.rootcause.sh"
-    echo "  🐙 https://github.com/RootCauseScan/scanner"
-    echo ""
-    echo -e "${BOLD}${BLUE}Automation options:${NC}"
-    echo "  FORCE_UPDATE=true ./install.sh    # Skip update confirmation"
-    echo "  curl -sSL https://rootcause.sh/install.sh | FORCE_UPDATE=true sh"
-    echo ""
+    printf "%s\n" ""
+    printf "%b\n" "${BOLD}${GREEN}🎉 Installation Complete!${NC}"
+    printf "%s\n" ""
+    printf "%b\n" "${BOLD}${BLUE}Usage Examples:${NC}"
+    printf "%s\n" "  rootcause scan ./src                    # Scan source directory"
+    printf "%s\n" "  rootcause scan . --format json          # Scan with JSON output"
+    printf "%s\n" "  rootcause rules list                    # List installed rules"
+    printf "%s\n" "  rootcause rules install <url> -n <name> # Install custom rules"
+    printf "%s\n" ""
+    printf "%b\n" "${BOLD}${BLUE}Documentation:${NC}"
+    printf "%s\n" "  📖 https://docs.rootcause.sh"
+    printf "%s\n" "  🐙 https://github.com/RootCauseScan/scanner"
+    printf "%s\n" ""
+    printf "%b\n" "${BOLD}${BLUE}Automation options:${NC}"
+    printf "%s\n" "  FORCE_UPDATE=true ./install.sh    # Skip update confirmation"
+    printf "%s\n" "  curl -sSL https://rootcause.sh/install.sh | FORCE_UPDATE=true sh"
+    printf "%s\n" ""
 }
 
 # =============================================================================
