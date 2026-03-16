@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 sm:pt-0">
+    <section ref={ref} className="min-h-screen flex items-center justify-center relative overflow-hidden pt-32 md:pt-0">
       {/* Background gradient */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"
