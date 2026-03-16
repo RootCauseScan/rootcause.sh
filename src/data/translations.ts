@@ -3,6 +3,7 @@ export const translations = {
     nav: {
       home: 'Inicio',
       rules: 'Reglas',
+      plugins: 'Plugins',
       docs: 'Docs',
       contact: 'Contacto'
     },
@@ -193,12 +194,32 @@ export const translations = {
         blog: 'Blog',
         privacy: 'Privacidad'
       }
+    },
+    plugins: {
+      badge: 'Extensible',
+      title: 'RootCause Plugins',
+      subtitle: 'Extiende y personaliza el motor SAST de RootCause.',
+      description: 'RootCause soporta un sistema de plugins que permite a los desarrolladores extender cómo funciona el escáner. Los plugins pueden modificar el descubrimiento, transformación, análisis, reglas y reportes, haciendo posible adaptar el motor SAST a diferentes flujos de trabajo, lenguajes o requisitos de seguridad.',
+      capabilitiesTitle: 'Capacidades de los plugins',
+      capabilities: {
+        discover: 'Encuentra archivos o recursos en el workspace',
+        rules: 'Agrega reglas de seguridad personalizadas',
+        transform: 'Modifica archivos antes del análisis',
+        analyze: 'Realiza análisis personalizado',
+        report: 'Genera reportes personalizados'
+      },
+      cta: {
+        title: 'Listo para construir un plugin?',
+        description: 'La documentación incluye guías paso a paso, ejemplos y referencias API para crear tus propios plugins.',
+        button: 'Aprende a construir plugins'
+      }
     }
   },
   en: {
     nav: {
       home: 'Home',
       rules: 'Rules',
+      plugins: 'Plugins',
       docs: 'Docs',
       contact: 'Contact'
     },
@@ -388,6 +409,25 @@ export const translations = {
         docs: 'Docs',
         blog: 'Blog',
         privacy: 'Privacy'
+      }
+    },
+    plugins: {
+      badge: 'Extensible',
+      title: 'RootCause Plugins',
+      subtitle: 'Extend and customize the RootCause SAST engine.',
+      description: 'RootCause supports a plugin system that allows developers to extend how the scanner works. Plugins can modify discovery, transformation, analysis, rules, and reporting, making it possible to adapt the SAST engine to different workflows, languages, or security requirements.',
+      capabilitiesTitle: 'Plugin capabilities',
+      capabilities: {
+        discover: 'Find files or resources in the workspace',
+        rules: 'Add custom security rules',
+        transform: 'Modify files before analysis',
+        analyze: 'Perform custom analysis',
+        report: 'Generate custom reports'
+      },
+      cta: {
+        title: 'Ready to build a plugin?',
+        description: 'The documentation includes step-by-step guides, examples, and API references for creating your own plugins.',
+        button: 'Learn how to build plugins'
       }
     }
   }

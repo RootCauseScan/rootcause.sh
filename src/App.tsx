@@ -6,6 +6,7 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { RulesPage } from './pages/RulesPage';
+import { PluginsPage } from './pages/PluginsPage';
 import { DocsPage } from './pages/DocsPage';
 import { ContactPage } from './pages/ContactPage';
 
@@ -20,6 +21,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/rules" element={<RulesPage />} />
+                <Route path="/plugins" element={<PluginsPage />} />
                 <Route path="/docs" element={<DocsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>

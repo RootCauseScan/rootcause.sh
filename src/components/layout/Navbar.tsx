@@ -18,6 +18,7 @@ export const Navbar: React.FC = () => {
   const navItems = [
     { name: t('nav.home'), path: '/' },
     { name: t('nav.rules'), path: '/rules' },
+    { name: t('nav.plugins'), path: '/plugins' },
     { name: t('nav.docs'), path: 'https://docs.rootcause.sh', external: true },
     { name: t('nav.contact'), path: '/contact' }
   ];
